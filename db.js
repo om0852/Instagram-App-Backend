@@ -1,5 +1,4 @@
-const mongoose = require("mongoose");
-
+import mongoose from "mongoose"
 // console.log(USERNAME);
 // console.log(PASSWORD)
 const connection = async () => {
@@ -11,4 +10,4 @@ const connection = async () => {
     }
 }
 
-module.exports = connection
+export default connection

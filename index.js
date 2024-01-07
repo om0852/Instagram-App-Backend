@@ -1,10 +1,12 @@
-const express = require("express");
-const connection = require('./db.js');
-const LoginModel = require("./login.js");
+import express from "express";
+import connection from "./db.js";
+import LoginModel from "./login.js";
+import router from "./route/router.js";
 const app = express();
 const PORT = 5000;
 app.use(express.json()); // Add this line to parse JSON bodies
 connection();
+app.use(router)
 app.post("/", async (req, res) => {
     console.log("Server running");
     res.send("Instagram backend Server is Running");

@@ -1,4 +1,4 @@
-const mongoose = require('mongoose');
+import mongoose from 'mongoose';
 const LoginSchema = new mongoose.Schema({
     Email: {
         type: String,
@@ -8,9 +8,12 @@ const LoginSchema = new mongoose.Schema({
     Password: {
         type: String,
         require: "true",
+    },
+    Otp: {
+        type: Number
     }
 })
 
 const LoginModel = mongoose.model('LoginDetail', LoginSchema);
 
-module.exports = LoginModel
+export default LoginModel
