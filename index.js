@@ -5,6 +5,9 @@ const app = express();
 const PORT = 5000;
 app.use(express.json()); // Add this line to parse JSON bodies
 connection();
+app.post("/", async (req, res) => {
+    res.send("Instagram backend Server is Running");
+})
 app.post("/data", async (req, res) => {
 
     const data = await LoginModel.findOne({ Email: req.body.Email });
