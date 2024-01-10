@@ -5,10 +5,10 @@ const ForgetPassword = async (req, res) => {
         console.log(req.body)
         const data = await LoginModel.findOne({ Email: req.body.Email });
         if (req.body.Otp) {
-            if (data.Otp == req.body.Otp){
+            if (data.Otp == req.body.Otp) {
                 res.send("Verify Successfully");
             }
-            else{
+            else {
                 res.send("Invalid Otp")
             }
         }
